@@ -1,0 +1,17 @@
+[2026-01-04 00:04:57] ERROR: TEST: Error test message
+[2026-01-04 00:42:21] ERROR: Server error (500) - Failed to create assignment: MongoServerError: E11000 duplicate key error collection: studentPortal_DB.assignments index: title_1 dup key: { title: "תרגיל 3" }
+[2026-01-04 00:44:43] ERROR: Server error (500) - Failed to submit assignment: E11000 duplicate key error collection: studentPortal_DB.submissions index: student_id_1 dup key: { student_id: "734221d598c9b784c00022dc" }
+[2026-01-04 00:45:11] ERROR: Server error (500) - Failed to submit assignment: E11000 duplicate key error collection: studentPortal_DB.submissions index: student_id_1 dup key: { student_id: "734221d598c9b784c00022dc" }
+[2026-01-04 00:53:07] ERROR: Server error (500) - Failed to submit assignment: E11000 duplicate key error collection: studentPortal_DB.submissions index: assignment_id_1 dup key: { assignment_id: "6959624394fcc19adf9d00dc" }
+[2026-01-04 00:55:21] ERROR: Server error (500) - Failed to submit assignment: E11000 duplicate key error collection: studentPortal_DB.submissions index: assignment_id_1 dup key: { assignment_id: "6959624394fcc19adf9d00dc" }
+[2026-01-04 00:55:43] ERROR: Server error (500) - Failed to submit assignment: E11000 duplicate key error collection: studentPortal_DB.submissions index: assignment_id_1 dup key: { assignment_id: "6959624394fcc19adf9d00dc" }
+[2026-01-04 01:47:54] ERROR: Server error (500) - Failed to submit assignment: Submission validation failed: student_id: Path `student_id` is required.
+[2026-01-04 01:51:29] ERROR: Server error (500) - Failed to submit assignment: Submission validation failed: student_id: Path `student_id` is required.
+[2026-01-04 01:55:58] ERROR: Server error (500) - Failed to submit assignment: Submission validation failed: student_id: Path `student_id` is required.
+[2026-01-04 01:57:18] ERROR: Server error (500) - Failed to submit assignment: Submission validation failed: student_id: Path `student_id` is required.
+[2026-01-04 01:58:45] ERROR: Server error (500) - Failed to submit assignment: Submission validation failed: student_id: Path `student_id` is required.
+[2026-01-04 02:00:11] ERROR: Server error (500) - Failed to submit assignment: Submission validation failed: student_id: Path `student_id` is required.
+[2026-01-04 02:01:45] ERROR: Server error (500) - Failed to submit assignment: Submission validation failed: student_id: Path `student_id` is required.
+[2026-01-04 02:02:50] ERROR: Server error (500) - Failed to submit assignment: Submission validation failed: student_id: Path `student_id` is required.
+[2026-01-04 02:33:41] ERROR: Server error (500) - Failed to submit assignment: E11000 duplicate key error collection: studentPortal_DB.submissions index: student_id_1_assignment_id_1 dup key: { student_id: "734221d598c9b784c00022dc", assignment_id: "6959ad0a0fb469dc68eadad8" }
+[2026-01-04 03:04:21] ERROR: Server error (500) - Failed to submit assignment: E11000 duplicate key error collection: studentPortal_DB.submissions index: student_id_1_assignment_id_1 dup key: { student_id: "b360d3a0c4631355dfa48a67", assignment_id: "6959ad0a0fb469dc68eadad8" }

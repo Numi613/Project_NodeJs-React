@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#2563eb">
+    <title>EduPortal - Student Management System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="brand">
+          <div class="logo" aria-hidden="true">
+            <!-- Education-themed SVG logo -->
+            <svg width="44" height="44" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0" y="0" width="48" height="48" rx="10" fill="url(#g)" />
+              <path d="M12 20L24 14L36 20V32L24 38L12 32V20Z" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M24 14V38" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <path d="M18 17L30 23" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              <defs>
+                <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#2563eb" />
+                  <stop offset="1" stop-color="#7c3aed" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div>
+            <h1>EduPortal</h1>
+            <p class="tagline">Student Assignment Management System</p>
+          </div>
+        </div>
+        <nav class="nav">
+          <div id="userInfo"></div>
+          <button id="showLogin" class="btn secondary">Login</button>
+          <button id="showRegister" class="btn secondary">Register</button>
+          <button id="logout" class="btn" style="display:none">Logout</button>
+        </nav>
+      </header>
+
+      <main>
+        <!-- Welcome Section (shown when not logged in) -->
+        <section id="welcomeSection" class="card hero">
+          <div class="welcome-content">
+            <h2>Welcome to EduPortal</h2>
+            <p class="muted">A comprehensive student assignment management system for teachers and students.</p>
+            <div class="features">
+              <div class="feature">
+                <h4>📚 For Students</h4>
+                <p>Submit assignments, track progress, and view grades</p>
+              </div>
+              <div class="feature">
+                <h4>👩‍🏫 For Teachers</h4>
+                <p>Create assignments, grade submissions, and track class performance</p>
+              </div>
+            </div>
+            <div style="margin-top:20px">
+              <button id="ctaLogin" class="btn">Get Started</button>
+            </div>
+          </div>
+        </section>
+      <!-- Auth -->
+      <section id="auth" class="card">
+        <div id="loginForm" style="display:none">
+          <h3>Login</h3>
+          <input id="loginName" placeholder="name" />
+          <input id="loginPassword" type="password" placeholder="password" />
+          <button id="loginBtn" class="btn">Login</button>
+          <p id="loginMsg" class="muted"></p>
+        </div>
+
+        <div id="registerForm" style="display:none">
+          <h3>Register</h3>
+          <div class="register-card">
+            <div class="field full">
+              <label for="regUserId">User ID <span class="muted small">(24 hex)</span></label>
+              <div class="input-row">
+                <input id="regUserId" placeholder="e.g. 60f7a1b2c3d4e5f678901234" />
+                <button id="genUserId" class="btn small secondary">Generate</button>
+              </div>
+              <small id="regUserIdErr" class="small-error hidden"></small>
+            </div>
+
+            <div class="field">
+              <label for="regName">Full name</label>
+              <input id="regName" placeholder="Full name" />
+            </div>
+
+            <div class="field">
+              <label for="regEmail">Email</label>
+              <input id="regEmail" placeholder="email" />
+            </div>
+
+            <div class="field">
+              <label for="regPassword">Password</label>
+              <input id="regPassword" type="password" placeholder="password" />
+              <small class="muted">At least 8 characters and include letters and numbers.</small>
+            </div>
+
+            <div class="field">
+              <label for="regRole">Role</label>
+              <select id="regRole">
+                <option value="student">Student</option>
+                <option value="teacher">Teacher</option>
+              </select>
+            </div>
+
+            <div class="field actions full" style="margin-top:6px">
+              <button id="registerBtn" class="btn">Register</button>
+              <button id="regClear" class="btn secondary">Clear</button>
+            </div>
+
+            <p id="regMsg" class="muted" style="grid-column:1/-1;margin-top:8px"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Student area -->
+      <section id="studentArea" class="card" style="display:none">
+        <div id="assignmentsBlock">
+          <h3>Assignments</h3>
+          <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px">
+            <button id="refreshAssignments" class="btn secondary">Refresh</button>
+            <button id="toggleAssignments" class="btn secondary">Hide</button>
+          </div>
+
+          <p id="assignmentsEmpty" class="muted small-muted hidden">No assignments available.</p>
+          <div id="assignmentsListWrap"><ul id="assignmentsList" class="assignments neat-list"></ul></div>
+        </div>
+
+        <h4>Submit Assignment</h4>
+        <div class="submit-card">
+          <label for="submitAssignmentId">Assignment ID</label>
+          <input id="submitAssignmentId" placeholder="assignment id" />
+          <label for="submitGithubLink">GitHub Repo</label>
+          <input id="submitGithubLink" placeholder="github link (e.g. https://github.com/.. )" />
+          <label for="submitPartner">Partner (optional)</label>
+          <input id="submitPartner" placeholder="partner user id (ask your partner for their 24-character ID)" />
+          <div class="submit-actions">
+            <button id="submitBtn" class="btn">Submit</button>
+            <button id="clearSubmitForm" class="btn secondary">Clear</button>
+          </div>
+          <p id="submitMsg" class="muted"></p>
+        </div>
+
+        <div id="mySubsBlock" style="margin-top:12px">
+          <h4>My Submissions</h4>
+          <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px">
+            <button id="refreshMySubs" class="btn secondary">Refresh</button>
+            <button id="toggleMySubs" class="btn secondary">Hide</button>
+          </div>
+
+          <p id="mySubsEmpty" class="muted small-muted hidden">You have no submissions yet.</p>
+          <div id="mySubsListWrap"><ul id="mySubsList" class="assignments neat-list"></ul></div>
+        </div>
+      </section>
+
+      <!-- Teacher area -->
+      <section id="teacherArea" class="card" style="display:none">
+        <h3>Teacher Panel</h3>
+        
+        <h4>Grade Specific Submission</h4>
+        <div class="submit-card">
+          <label for="gradeStudentId">Student ID</label>
+          <input id="gradeStudentId" placeholder="Student ID (e.g. user_118042)" />
+          <label for="gradeAssignmentId">Assignment ID</label>
+          <input id="gradeAssignmentId" placeholder="Assignment ID" />
+          <label for="manualGrade">Grade</label>
+          <input id="manualGrade" placeholder="Grade (0-100)" />
+          <label for="manualComment">Feedback</label>
+          <textarea id="manualComment" placeholder="Write feedback for the student"></textarea>
+          <div class="submit-actions">
+            <button id="manualGradeBtn" class="btn">Submit Grade</button>
+            <button id="clearGradeForm" class="btn secondary">Clear</button>
+          </div>
+          <p id="manualGradeMsg" class="muted"></p>
+        </div>
+        
+        <h4>Add Assignment</h4>
+        <input id="addTitle" placeholder="title" />
+        <input id="addDueDate" type="date" />
+        <textarea id="addDescription" placeholder="description"></textarea>
+        <button id="addAssignmentBtn" class="btn">Add</button>
+        <p id="addMsg" class="muted"></p>
+
+        <h4>All Submissions</h4>
+        <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px">
+          <button id="refreshSubs" class="btn secondary">View all submissions</button>
+          <button id="toggleSubs" class="btn secondary" style="display:none">Hide</button>
+        </div>
+        <p id="subsEmpty" class="muted small-muted hidden">No submissions yet.</p>
+        <div id="allSubsListWrap"><ul id="allSubsList" class="submissions"></ul></div>
+
+        <h4>Average Grade</h4>
+        <button id="getAvg" class="btn secondary">Get Average</button>
+        <p id="avgGrade" class="muted"></p>
+      </section>
+
+      <!-- Marking modal (hidden by default) -->
+      <div id="markModal" class="modal hidden" aria-hidden="true">
+        <div class="modal-dialog card">
+          <h3>Mark Submission</h3>
+          <label for="markGrade">Grade</label>
+          <input id="markGrade" placeholder="Grade (0-100)" />
+          <label for="markComment">Feedback (optional)</label>
+          <textarea id="markComment" placeholder="Write feedback for the student"></textarea>
+          <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px">
+            <button id="markCancel" class="btn secondary">Cancel</button>
+            <button id="markSubmit" class="btn">Submit</button>
+          </div>
+          <p id="markMsg" class="muted"></p>
+        </div>
+      </div>
+
+      <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+      <div id="debug" class="card muted debug hidden"></div>
+
+      <footer class="card muted center" style="margin-top:8px">
+        <small>© EduPortal • Student Management System<br>All rights reserved to Dina Dyckman & Numi Adlerstien</small>
+      </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

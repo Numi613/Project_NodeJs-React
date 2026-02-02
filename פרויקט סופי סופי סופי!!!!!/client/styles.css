@@ -1,0 +1,139 @@
+/* Product-ready visual polish */
+:root{
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --accent: #2563eb;
+  --accent-2: #7c3aed;
+  --muted: #6b7280;
+  --glass: rgba(255,255,255,0.6);
+  --shadow: 0 10px 30px rgba(23,43,77,0.08);
+  --subtle-shadow: 0 6px 18px rgba(23,43,77,0.05);
+  --radius: 12px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:linear-gradient(180deg,#f8fbff,var(--bg)); color:#071233;-webkit-font-smoothing:antialiased}
+
+.container{max-width:1100px;margin:48px auto;padding:24px}
+
+header{background:transparent;padding:18px 0;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:14px}
+.logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;box-shadow:var(--subtle-shadow);transition:transform .18s ease}
+.logo:hover{transform:translateY(-4px)}
+.brand h1{margin:0;font-size:1.1rem;font-weight:700}
+.tagline{margin:0;color:var(--muted);font-size:0.9rem}
+.nav{display:flex;align-items:center;gap:12px}
+.nav .btn{padding:8px 12px}
+.nav .btn.secondary{border-color:rgba(37,99,235,0.12)}
+
+.welcome{display:flex;flex-direction:column;align-items:flex-end;text-align:right}
+.welcome strong{font-size:1.02rem}
+.welcome .role{font-size:0.85rem;color:var(--muted)}
+
+main{padding:20px 0}
+.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;margin-bottom:20px;overflow:hidden}
+.card h3{margin-top:0}
+.hero{display:flex;align-items:center;gap:20px}
+.hero h2{font-size:1.6rem;margin:0}
+.hero p{margin:10px 0;color:var(--muted)}
+
+/* Welcome section styles */
+.welcome-content{text-align:center;max-width:800px;margin:0 auto}
+.welcome-content h2{font-size:2rem;margin-bottom:16px;background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.features{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:32px 0;text-align:left}
+.feature{padding:20px;border-radius:12px;border:1px solid #eef6ff;background:linear-gradient(180deg,rgba(37,99,235,0.02),transparent)}
+.feature h4{margin:0 0 8px 0;color:var(--accent)}
+.feature p{margin:0;color:var(--muted);font-size:0.9rem}
+@media(max-width:768px){.features{grid-template-columns:1fr;text-align:center}}
+
+form input, textarea, select{width:100%;padding:12px;border:1px solid #e4effc;border-radius:10px;margin:10px 0;background:transparent;transition:box-shadow .12s ease,border-color .12s ease}
+form input:focus, textarea:focus, select:focus{outline:none;border-color:var(--accent);box-shadow:0 6px 20px rgba(37,99,235,0.06)}
+textarea{min-height:120px}
+
+/* small inline field error */
+.small-error{color:#b91c1c;font-size:0.85rem;margin-top:4px}
+.small-error.hidden{display:none} 
+
+.btn{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;border:none;padding:10px 18px;border-radius:10px;cursor:pointer;font-weight:700;box-shadow:0 8px 20px rgba(37,99,235,0.12);transition:transform .12s ease,box-shadow .12s ease}
+.btn:hover{transform:translateY(-4px);box-shadow:0 18px 50px rgba(37,99,235,0.14)}
+.btn.secondary{background:transparent;color:var(--accent);border:1px solid rgba(37,99,235,0.12);box-shadow:none}
+.btn.disabled{opacity:0.6;cursor:default;transform:none;box-shadow:none}
+.muted{color:var(--muted)}
+.small-muted{font-size:0.9rem;color:var(--muted)}
+.hidden{display:none}
+
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}.welcome{text-align:left;align-items:flex-start}}
+
+ul{list-style:none;padding:0;margin:8px 0}
+li{padding:12px;border-bottom:1px solid #f3f7fb}
+.assignments.neat-list li{display:flex;justify-content:space-between;align-items:center;padding:14px;border-radius:10px;border:1px solid #f1f5fb;margin-bottom:10px}
+.assignments .meta{color:var(--muted);font-size:0.9rem}
+.submissions li{display:block;padding:0;margin-bottom:12px}
+.submissions .submission-item{display:flex;justify-content:space-between;align-items:center;padding:14px;border-radius:10px;border:1px solid #eef6ff;background:linear-gradient(180deg,rgba(37,99,235,0.02),transparent)}
+.submissions .left{flex:1}
+.submissions .title{font-weight:700;margin-bottom:6px}
+.submissions .small-muted{color:var(--muted);font-size:0.9rem}
+.submissions .right{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.btn.small{padding:6px 10px;border-radius:8px;font-size:0.9rem}
+.role-badge{display:inline-block;padding:6px 10px;background:#eef2ff;color:#1e3a8a;border-radius:999px;font-size:0.8rem;margin-left:8px;font-weight:600}
+
+/* small utilities */
+.center{display:flex;align-items:center;justify-content:center}
+.hidden{display:none}
+
+.debug{font-size:12px;color:var(--muted)}
+
+/* Modal styles for marking submissions */
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(7,18,51,0.45);z-index:2000}
+.modal.hidden{display:none}
+.modal-dialog{width:520px;max-width:92%;border-radius:12px;padding:18px}
+.modal-dialog label{display:block;margin-top:8px;font-weight:600;color:#213a7b}
+.modal-dialog input, .modal-dialog textarea{width:100%;padding:10px;border:1px solid #e6eef8;border-radius:8px;margin-top:6px}
+.modal-dialog textarea{min-height:100px}
+
+/* Collapsed summary for lists */
+.collapsed-summary{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:10px;border:1px dashed #eef6ff;background:linear-gradient(90deg,rgba(37,99,235,0.03),transparent);margin-bottom:10px}
+.collapsed-summary .summary-text{color:var(--muted)}
+.collapsed-summary .btn.small{padding:6px 8px}
+
+/* Submit card style (student) */
+.submit-card{padding:12px;border-radius:12px;border:1px solid #eef6ff;background:linear-gradient(180deg,rgba(255,255,255,0.7),transparent);margin-bottom:12px}
+.submit-card label{display:block;font-weight:600;color:#213a7b;margin-top:6px}
+.submit-card input{padding:10px;border-radius:8px;border:1px solid #e8f1ff;margin-top:6px}
+.submit-card .submit-actions{display:flex;gap:8px;margin-top:10px}
+
+/* Register card */
+.register-card{padding:12px;border-radius:12px;border:1px solid #eef6ff;background:linear-gradient(180deg,rgba(255,255,255,0.92),transparent);margin-bottom:12px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.register-card .field{display:flex;flex-direction:column}
+.register-card .field.full{grid-column:1/-1}
+.register-card label{font-weight:600;color:#213a7b;margin-bottom:6px}
+.register-card .input-row{display:flex;gap:8px;align-items:center}
+.register-card input{padding:10px;border-radius:8px;border:1px solid #e8f1ff}
+.register-card input#regUserId{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,'Roboto Mono',monospace}
+.register-card .muted{font-size:0.85rem}
+.register-card .actions{display:flex;gap:8px}
+
+@media(max-width:760px){
+  .register-card{grid-template-columns:1fr}
+  .register-card .actions{flex-wrap:wrap}
+}
+
+/* Small tweak: make lists smoothly collapse */
+#assignmentsListWrap, #mySubsListWrap{transition:max-height .28s ease, opacity .18s ease;overflow:hidden}
+.hidden-wrap{max-height:0;opacity:0}
+.visible-wrap{max-height:800px;opacity:1}
+/* Toast */
+.toast{position:fixed;right:20px;bottom:20px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;padding:12px 16px;border-radius:12px;box-shadow:0 12px 30px rgba(37,99,235,0.12);z-index:3000}
+.toast.hidden{display:none}
+.toast.toast-error{background:#ef4444}
+.toast.toast-success{background:#10b981}
+
+/* subtle entrance animations */
+.card{opacity:0;transform:translateY(6px);animation:enter .36s ease forwards}
+@keyframes enter{to{opacity:1;transform:none}}
+
+/* accessibility focus */
+:focus{outline:2px solid rgba(37,99,235,0.12);outline-offset:2px}
+
+footer.card{background:transparent;text-align:center;color:var(--muted);box-shadow:none;padding:12px}

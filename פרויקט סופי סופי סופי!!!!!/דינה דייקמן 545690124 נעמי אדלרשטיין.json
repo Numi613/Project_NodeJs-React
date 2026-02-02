@@ -1,0 +1,348 @@
+{
+	"info": {
+		"_postman_id": "58f0b709-5b71-4b27-97cf-f3a661e55363",
+		"name": "נעמי אדלרשטיין ודינה דייקמו",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49548401",
+		"_collection_link": "https://dinadyckman-1848673.postman.co/workspace/dinadyckman's-Workspace~33684436-c868-4db3-83b7-f9574fd631a4/collection/49548401-58f0b709-5b71-4b27-97cf-f3a661e55363?action=share&source=collection_link&creator=49548401"
+	},
+	"item": [
+		{
+			"name": "1_registerUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"user_id\": \"54690124\",\r\n  \"name\": \"chana\",\r\n  \"email\": \"chanad@gmail.com\",\r\n  \"password\": \"chanad1226\",\r\n  \"role\":\"student\"\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/identification/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"identification",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2_login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"bina\",\r\n    \"password\":\"bina12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/identification/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"identification",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3_addNewAsighnment",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0NTU2MzIxNSIsInJvbGUiOiJ0ZWFjaGVyIiwiaWF0IjoxNzY3MjIyODY0LCJleHAiOjE3OTg3ODA0NjR9.cFtV2IYT9yngytYvce-BwW6C7hjms7bIEy2TLwBXbSs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"משימת תכנות ראשונה\",\r\n    \"description\": \"יש ליצור פונקציה שמחברת שני מספרים\",\r\n    \"dueDate\": \"2026-02-01\",\r\n    \"courseId\": \"101\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/teacher/addAssignment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"teacher",
+						"addAssignment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4_VeiwSubmisionsByID",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0NTU2MzIxNSIsInJvbGUiOiJ0ZWFjaGVyIiwiaWF0IjoxNzY3MjIyODY0LCJleHAiOjE3OTg3ODA0NjR9.cFtV2IYT9yngytYvce-BwW6C7hjms7bIEy2TLwBXbSs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"grade\": 100,\r\n  \"comment\": \"Perfect work! The architecture is amazing.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/teacher/markSubmission/54690124/6955af769be18708a10d8242",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"teacher",
+						"markSubmission",
+						"54690124",
+						"6955af769be18708a10d8242"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5_Averages",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0NTU2MzIxNSIsInJvbGUiOiJ0ZWFjaGVyIiwiaWF0IjoxNzY3MjMwMTIwLCJleHAiOjE3OTg3ODc3MjB9.Qua-7jm5wPqBLhN08IX8Uy6GE9jeieunmGEaEaeC_-s",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/teacher/averageGrade",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"teacher",
+						"averageGrade"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6_VeiwAllAsighnments",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NDY5MDEyNCIsInJvbGUiOiJzdHVkZW50IiwiaWF0IjoxNzY3MjI0MjA1LCJleHAiOjE3OTg3ODE4MDV9.OcMSVTlaZ5CinvWuTesohTvkAmn0tzXDiDe2wsWo104",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/student/assignments?athorization=token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NDY5MDEyNCIsInJvbGUiOiJzdHVkZW50IiwiaWF0IjoxNzY3MjI0MjA1LCJleHAiOjE3OTg3ODE4MDV9.OcMSVTlaZ5CinvWuTesohTvkAmn0tzXDiDe2wsWo104",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"student",
+						"assignments"
+					],
+					"query": [
+						{
+							"key": "athorization",
+							"value": "token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NDY5MDEyNCIsInJvbGUiOiJzdHVkZW50IiwiaWF0IjoxNzY3MjI0MjA1LCJleHAiOjE3OTg3ODE4MDV9.OcMSVTlaZ5CinvWuTesohTvkAmn0tzXDiDe2wsWo104"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7_SubmitAsighnment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NDY5MDEyNCIsInJvbGUiOiJzdHVkZW50IiwiaWF0IjoxNzY3MjI0MjA1LCJleHAiOjE3OTg3ODE4MDV9.OcMSVTlaZ5CinvWuTesohTvkAmn0tzXDiDe2wsWo104",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"assignment_id\": \"6955af769be18708a10d8242\",\r\n    \"student_id\": \"54690124\",\r\n    \"githubLink\": \"https://github.com/your-repo/project\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/student/submitAssignment/54690124",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"student",
+						"submitAssignment",
+						"54690124"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "8_MySubmisions",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NDY5MDEyNCIsInJvbGUiOiJzdHVkZW50IiwiaWF0IjoxNzY3MjI2MDc3LCJleHAiOjE3OTg3ODM2Nzd9._LJHCp1ZM12VxnRxLDnbbj1EYmJ8l0r7Gy_AMl6Vk1k",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/student/mySubmisions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"student",
+						"mySubmisions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "9_VeiwAll",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0NTU2MzIxNSIsInJvbGUiOiJ0ZWFjaGVyIiwiaWF0IjoxNzY3MjIyODY0LCJleHAiOjE3OTg3ODA0NjR9.cFtV2IYT9yngytYvce-BwW6C7hjms7bIEy2TLwBXbSs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/teacher/submissions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"teacher",
+						"submissions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "10_loginFAil",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"hannah@example.com\", \r\n    \"password\": \"wrongpassword123\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "11_NotAutherized",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/teacher/averageGrade",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"teacher",
+						"averageGrade"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,54 @@
+[2026-01-04 02:02:37] INFO: Connected to MongoDB successfully
+[2026-01-04 02:03:48] INFO: Connected to MongoDB successfully
+[2026-01-04 02:07:02] INFO: Connected to MongoDB successfully
+[2026-01-04 02:09:50] INFO: Connected to MongoDB successfully
+[2026-01-04 02:10:41] INFO: Connected to MongoDB successfully
+[2026-01-04 02:11:02] INFO: Connected to MongoDB successfully
+[2026-01-04 02:11:58] INFO: Connected to MongoDB successfully
+[2026-01-04 02:12:55] INFO: Connected to MongoDB successfully
+[2026-01-04 02:14:08] INFO: New submission added - Student: user_118042, Assignment: 6959ad0a0fb469dc68eadad8
+[2026-01-04 02:14:33] INFO: Login failed - User: sara, Reason: Invalid password
+[2026-01-04 02:14:48] INFO: New submission added - Student: ID_149839, Assignment: 6959ad0a0fb469dc68eadad8
+[2026-01-04 02:22:36] INFO: Teacher viewed all submissions
+[2026-01-04 02:22:54] INFO: Teacher viewed all submissions
+[2026-01-04 02:26:09] INFO: Teacher viewed all submissions
+[2026-01-04 02:26:25] INFO: Login failed - User: chagit, Reason: Invalid password
+[2026-01-04 02:26:51] INFO: New submission added - Student: 734221d598c9b784c00022dc, Assignment: 6959ad0a0fb469dc68eadad8
+[2026-01-04 02:28:22] INFO: Teacher viewed all submissions
+[2026-01-04 02:31:07] INFO: Teacher viewed all submissions
+[2026-01-04 02:31:38] INFO: Teacher viewed all submissions
+[2026-01-04 02:33:41] ERROR: Server error (500) - Failed to submit assignment: E11000 duplicate key error collection: studentPortal_DB.submissions index: student_id_1_assignment_id_1 dup key: { student_id: "734221d598c9b784c00022dc", assignment_id: "6959ad0a0fb469dc68eadad8" }
+[2026-01-04 02:36:02] INFO: Teacher viewed all submissions
+[2026-01-04 02:37:05] INFO: Teacher viewed all submissions
+[2026-01-04 02:51:32] INFO: New submission added - Student: b360d3a0c4631355dfa48a67, Assignment: 6959ad0a0fb469dc68eadad8
+[2026-01-04 03:04:21] ERROR: Server error (500) - Failed to submit assignment: E11000 duplicate key error collection: studentPortal_DB.submissions index: student_id_1_assignment_id_1 dup key: { student_id: "b360d3a0c4631355dfa48a67", assignment_id: "6959ad0a0fb469dc68eadad8" }
+[2026-01-04 03:06:59] INFO: New submission added - Student: b360d3a0c4631355dfa48a67, Assignment: 6959a342fe6669c358049c87
+[2026-01-04 03:08:39] INFO: Teacher viewed all submissions
+[2026-01-04 03:10:00] INFO: New assignment added: "תרגיל7"
+[2026-01-04 03:10:00] INFO: Teacher viewed all submissions
+[2026-01-04 03:10:08] INFO: Teacher viewed all submissions
+[2026-01-04 03:10:13] INFO: Teacher viewed all submissions
+[2026-01-04 03:11:47] INFO: Teacher viewed average grades
+[2026-01-04 03:12:18] INFO: Teacher viewed all submissions
+[2026-01-04 03:12:20] INFO: Teacher viewed all submissions
+[2026-01-04 03:12:22] INFO: Teacher viewed all submissions
+[2026-01-04 03:22:17] INFO: Connected to MongoDB successfully
+[2026-01-04 03:24:52] INFO: New assignment added: "תרגיל8"
+[2026-01-04 03:24:52] INFO: Teacher viewed all submissions
+[2026-01-04 03:25:12] INFO: Login failed - User: chagit, Reason: Invalid password
+[2026-01-04 03:25:46] INFO: New submission added - Student: 734221d598c9b784c00022dc, Assignment: 6959c164d00a516f6d684c42
+[2026-01-04 03:34:23] INFO: Connected to MongoDB successfully
+[2026-01-04 03:42:03] INFO: Connected to MongoDB successfully
+[2026-01-04 03:50:25] INFO: Connected to MongoDB successfully
+[2026-01-04 03:50:58] INFO: Teacher viewed all submissions
+[2026-01-04 03:57:09] INFO: Connected to MongoDB successfully
+[2026-01-04 03:57:31] INFO: Teacher viewed all submissions
+[2026-01-04 04:00:19] INFO: Teacher viewed average grades
+[2026-01-04 04:00:22] INFO: Teacher viewed all submissions
+[2026-01-04 04:05:12] INFO: Teacher viewed all submissions
+[2026-01-04 04:06:28] INFO: Teacher viewed all submissions
+[2026-01-04 04:25:31] INFO: Connected to MongoDB successfully
+[2026-01-04 04:25:41] INFO: Login failed - User: gila, Reason: Invalid password
+[2026-01-04 04:26:15] INFO: New submission added - Student: 7b29ba4d65ea458887958146, Assignment: 6959c164d00a516f6d684c42
+[2026-01-04 04:27:48] INFO: New assignment added: "תרגיל9"
+[2026-01-04 04:27:48] INFO: Teacher viewed all submissions
